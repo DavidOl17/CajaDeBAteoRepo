@@ -36,6 +36,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -54,6 +55,25 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ComunicacionArduino\ArduinoComunication.cs" />
+    <Compile Include="ComunicacionArduino\SensorNotFoundExceptio.cs" />
+    <Compile Include="ControlDeUsuarios\EscribirDebug.xaml.cs">
+      <DependentUpon>EscribirDebug.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ControlDeUsuarios\Leer.xaml.cs">
+      <DependentUpon>Leer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SeleccionaArduino.xaml.cs">
+      <DependentUpon>SeleccionaArduino.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ControlDeUsuarios\EscribirDebug.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ControlDeUsuarios\Leer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ControlDeUsuarios\UserControl1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -73,6 +93,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="SeleccionaArduino.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Menu\ControladorMenu.cs" />

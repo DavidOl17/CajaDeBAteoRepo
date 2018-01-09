@@ -1,4 +1,5 @@
-﻿using CajaDeBateo.ControlDeUsuarios;
+﻿using CajaDeBateo.ComunicacionArduino;
+using CajaDeBateo.ControlDeUsuarios;
 using CajaDeBateo.Menu;
 using System;
 using System.Collections.Generic;
@@ -25,8 +26,25 @@ namespace CajaDeBateo
         Button[] principal,tarjeta,creditos,agregarCreditos,configuracion;
         ControladorMenu principalC, tarjetaC, creditosC, agregarCreditosC, configuracionC;
         ControladorMenus controlador;
+
+        private void Reset(object sender, KeyEventArgs e)
+        {
+            if(e.Key==Key.F1)
+            {
+                ardC.Reset();
+                stkUSerControlContainer.Children.Remove(controlDeVista);
+                uscPrincipal = new UserControl1();
+                controlDeVista = uscPrincipal;
+                stkUSerControlContainer.Children.Add(controlDeVista);
+            }
+                
+        }
+
         private UserControl1 uscPrincipal;
         private Control controlDeVista;
+        int puertoSeleccionado;
+        string[] puertos;
+        ArduinoComunication ardC;
         public MainWindow()
         {
             InitializeComponent();
@@ -34,7 +52,31 @@ namespace CajaDeBateo
             uscPrincipal = new UserControl1();
             controlDeVista = uscPrincipal;
             stkUSerControlContainer.Children.Add(controlDeVista);
+            SeleccionaArduino sA = new SeleccionaArduino();
+            sA.ShowDialog();
+            puertoSeleccionado = sA.Index;
+            puertos = sA.EP;
+            //ardC.RespuestaRecivida += new EventHandler(Recepcion);
+            try
+            {
+                ardC= new ArduinoComunication(puertoSeleccionado, puertos);
+            } catch (SensorNotFoundExceptio e)
+            {
+                MessageBox.Show(e.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (Exception a)
+            {
+                MessageBox.Show(a.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            
         }
+
+        //private void Recepcion(object sender, EventArgs e)
+        //{
+        //    string data = (string)sender;
+        //    MessageBox.Show(data);
+        //}
+
         void InicializaBotones()
         {
             principal = new Button[3];
@@ -104,6 +146,18 @@ namespace CajaDeBateo
                     break;
                 case "btnAgregarCreditos":
                     controlador.setAgregarCreditos();
+                    break;
+                case "btnCrear":
+                    stkUSerControlContainer.Children.Remove(controlDeVista);
+                    EscribirDebug escribir= new EscribirDebug(ref ardC);
+                    controlDeVista = escribir;
+                    stkUSerControlContainer.Children.Add(controlDeVista);
+                    break;
+                case "btnActivar":
+                    stkUSerControlContainer.Children.Remove(controlDeVista);
+                    Leer leer = new Leer(ref ardC);
+                    controlDeVista = leer;
+                    stkUSerControlContainer.Children.Add(controlDeVista);
                     break;
             }
         }

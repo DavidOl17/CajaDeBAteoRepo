@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CajaDeBateo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="373" Width="800">
+        Title="MainWindow" Height="373" Width="800" KeyDown="Reset">
     
     <Grid>
         <Grid.ColumnDefinitions>
@@ -125,8 +125,8 @@
             </Button>
         </Grid>
         <Grid x:Name="grdContenido" HorizontalAlignment="Stretch"  Margin="10,10,10,10" VerticalAlignment="Stretch" Grid.Column="1">
-            <StackPanel Name="stkUSerControlContainer">
-            </StackPanel>
+            <DockPanel Name="stkUSerControlContainer">
+            </DockPanel>
         </Grid>
 
     </Grid>
