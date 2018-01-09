@@ -19,24 +19,35 @@ namespace CajaDeBateo.ControlDeUsuarios
     /// <summary>
     /// Lógica de interacción para EscribirDebug.xaml
     /// </summary>
-    public partial class EscribirDebug : UserControl
+    public partial class CrearTarjeta : UserControl
     {
         Random random = new Random();
         int id;
         ArduinoComunication arduino;
         bool escribirID = false;
         bool leer = false;
-        public EscribirDebug(ref ArduinoComunication arduino)
+        public CrearTarjeta(ref ArduinoComunication arduino)
         {
             InitializeComponent();
             escribirID = false;
             leer = false;
             this.arduino = arduino;
             //arduino.Reset();
-            arduino.RespuestaRecivida += new EventHandler(Read);
-            id = random.Next(0, 50000);
-            lblID.Content = "ID" + id.ToString();
-            arduino.Write("1");
+            try
+            {
+                arduino.RespuestaRecivida += new EventHandler(Read);
+                id = random.Next(0, 50000);
+                lblID.Content = "ID" + id.ToString();
+                arduino.Write("1");
+            }
+            catch (NullReferenceException e)
+            {
+                String Mensaje = "Conexión a Lector/Escritor no detectada. " + e.Message;
+                MessageBox.Show(Mensaje, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            /*MainWindow Win = (MainWindow)Window.GetWindow(this);
+            Win.RegresarPantallaInicial();*/
         }
 
         private void Read(object sender, EventArgs e)

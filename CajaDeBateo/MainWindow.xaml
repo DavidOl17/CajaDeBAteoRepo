@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:CajaDeBateo"
         mc:Ignorable="d"
         Title="MainWindow" Height="373" Width="800" KeyDown="Reset">
-    
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
@@ -26,105 +26,136 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            
-            <Button x:Name="btnTarjetas" HorizontalAlignment="Stretch" Margin="0,0,0,0"  VerticalAlignment="Stretch" FontFamily="Showcard Gothic" FontSize="16" VerticalContentAlignment="Bottom" Grid.Column="0" Grid.Row="0" >
+
+            <Button x:Name="btnTarjetas" HorizontalAlignment="Stretch" Margin="0,0,0,0"  
+                    VerticalAlignment="Stretch" FontFamily="Showcard Gothic" FontSize="16" 
+                    VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="0" >
                 <StackPanel>
                     <Image Source="Imagenes/Tarjetas.png" Width="38"/>
                     <TextBlock>Tarjetas</TextBlock>
                 </StackPanel>
             </Button>
-            <Button x:Name="btnCreditos" HorizontalAlignment="Stretch" Margin="0,0,0,0"  VerticalAlignment="Stretch" FontFamily="Showcard Gothic" FontSize="16" VerticalContentAlignment="Bottom" Grid.Column="0" Grid.Row="1" >
+            <Button x:Name="btnCreditos" HorizontalAlignment="Stretch" Margin="0,0,0,0"  
+                    VerticalAlignment="Stretch" FontFamily="Showcard Gothic" FontSize="16" 
+                    VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="1" >
                 <StackPanel>
                     <Image Source="Imagenes/Creditos.png" Width="38"/>
                     <TextBlock>Creditos</TextBlock>
                 </StackPanel>
             </Button>
-            <Button x:Name="btnConfiguracion" HorizontalAlignment="Stretch" Margin="0,0,0,0"  VerticalAlignment="Stretch" FontFamily="Showcard Gothic" FontSize="16" VerticalContentAlignment="Bottom" Grid.Column="0" Grid.Row="2" >
+            <Button x:Name="btnConfiguracion" HorizontalAlignment="Stretch" Margin="0,0,0,0"  
+                    VerticalAlignment="Stretch" FontFamily="Showcard Gothic" FontSize="16" 
+                    VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="2" >
                 <StackPanel>
                     <Image Source="Imagenes/Configuracion.png" Width="38"/>
                     <TextBlock>Configuracion</TextBlock>
                 </StackPanel>
             </Button>
-            
 
-            <Button x:Name="btnCrear" HorizontalAlignment="Stretch" Margin="0,0,0,0"  VerticalAlignment="Stretch" FontFamily="Showcard Gothic" FontSize="16" VerticalContentAlignment="Bottom" Grid.Column="0" Grid.Row="0" >
+
+            <Button x:Name="btnCrear" HorizontalAlignment="Stretch" Margin="0,0,0,0"  
+                    VerticalAlignment="Stretch" FontFamily="Showcard Gothic" FontSize="16" 
+                    VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="0" >
                 <StackPanel>
                     <Image Source="Imagenes/Crear.png" Width="38"/>
                     <TextBlock>Crear</TextBlock>
                 </StackPanel>
             </Button>
-            <Button x:Name="btnActivar" HorizontalAlignment="Stretch" Margin="0,0,0,0"  VerticalAlignment="Stretch" FontFamily="Showcard Gothic" FontSize="16" VerticalContentAlignment="Bottom" Grid.Column="0" Grid.Row="1" >
+            <Button x:Name="btnActivar" HorizontalAlignment="Stretch" Margin="0,0,0,0"  
+                    VerticalAlignment="Stretch" FontFamily="Showcard Gothic" FontSize="16" 
+                    VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="1" >
                 <StackPanel>
                     <Image Source="Imagenes/Activar.png" Width="38"/>
                     <TextBlock>Activar</TextBlock>
                 </StackPanel>
             </Button>
-            <Button x:Name="btnDesactivar" HorizontalAlignment="Stretch" Margin="0,0,0,0"  VerticalAlignment="Stretch" FontFamily="Showcard Gothic" FontSize="16" VerticalContentAlignment="Bottom" Grid.Column="0" Grid.Row="2" >
+            <Button x:Name="btnDesactivar" HorizontalAlignment="Stretch" Margin="0,0,0,0"  
+                    VerticalAlignment="Stretch" FontFamily="Showcard Gothic" FontSize="16" 
+                    VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="2" >
                 <StackPanel>
                     <Image Source="Imagenes/Cancel.png" Width="38"/>
                     <TextBlock>Desactivar</TextBlock>
                 </StackPanel>
             </Button>
 
-            <Button x:Name="btnAgregarCreditos" HorizontalAlignment="Stretch" Margin="0,0,0,0"  VerticalAlignment="Stretch" FontFamily="Showcard Gothic" FontSize="16" VerticalContentAlignment="Bottom" Grid.Column="0" Grid.Row="0" >
+            <Button x:Name="btnAgregarCreditos" HorizontalAlignment="Stretch" Margin="0,0,0,0"  
+                    VerticalAlignment="Stretch" FontFamily="Showcard Gothic" FontSize="16" 
+                    VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="0" >
                 <StackPanel>
                     <Image Source="Imagenes/agregar.png" Width="38"/>
                     <TextBlock>Agregar</TextBlock>
                 </StackPanel>
             </Button>
-            <Button x:Name="btnVerCreditos" HorizontalAlignment="Stretch" Margin="0,0,0,0"  VerticalAlignment="Stretch" FontFamily="Showcard Gothic" FontSize="16" VerticalContentAlignment="Bottom" Grid.Column="0" Grid.Row="1" >
+            <Button x:Name="btnVerCreditos" HorizontalAlignment="Stretch" Margin="0,0,0,0"  
+                    VerticalAlignment="Stretch" FontFamily="Showcard Gothic" FontSize="16" 
+                    VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="1" >
                 <StackPanel>
                     <Image Source="Imagenes/Ver.png" Width="38"/>
                     <TextBlock>Ver activos</TextBlock>
                 </StackPanel>
             </Button>
-            <Button x:Name="btnVerCreditosCompletos" HorizontalAlignment="Stretch" Margin="0,0,0,0"  VerticalAlignment="Stretch" FontFamily="Showcard Gothic" FontSize="16" VerticalContentAlignment="Bottom" Grid.Column="0" Grid.Row="2" >
+            <Button x:Name="btnVerCreditosCompletos" HorizontalAlignment="Stretch" 
+                    Margin="0,0,0,0"  VerticalAlignment="Stretch" FontFamily="Showcard Gothic" 
+                    FontSize="16" VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="2">
                 <StackPanel>
                     <Image Source="Imagenes/Ver.png" Width="38"/>
                     <TextBlock>Ver historial</TextBlock>
                 </StackPanel>
             </Button>
-            <Button x:Name="btnActualizarCreditos" HorizontalAlignment="Stretch" Margin="0,0,0,0"  VerticalAlignment="Stretch" FontFamily="Showcard Gothic" FontSize="16" VerticalContentAlignment="Bottom" Grid.Column="0" Grid.Row="3" >
+            <Button x:Name="btnActualizarCreditos" HorizontalAlignment="Stretch" Margin="0,0,0,0"  
+                    VerticalAlignment="Stretch" FontFamily="Showcard Gothic" FontSize="16" 
+                    VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="3" >
                 <StackPanel>
                     <Image Source="Imagenes/Actualizar.png" Width="38"/>
                     <TextBlock>Actualizar</TextBlock>
                 </StackPanel>
             </Button>
 
-            <Button x:Name="btnAgregarMensual" HorizontalAlignment="Stretch" Margin="0,0,0,0"  VerticalAlignment="Stretch" FontFamily="Showcard Gothic" FontSize="16" VerticalContentAlignment="Bottom" Grid.Column="0" Grid.Row="0" >
+            <Button x:Name="btnAgregarMensual" HorizontalAlignment="Stretch" Margin="0,0,0,0"  
+                    VerticalAlignment="Stretch" FontFamily="Showcard Gothic" FontSize="16" 
+                    VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="0" >
                 <StackPanel>
                     <Image Source="Imagenes/Date.png" Width="38"/>
                     <TextBlock>Mensual</TextBlock>
                 </StackPanel>
             </Button>
-            <Button x:Name="btnMasCreditos" HorizontalAlignment="Stretch" Margin="0,0,0,0"  VerticalAlignment="Stretch" FontFamily="Showcard Gothic" FontSize="16" VerticalContentAlignment="Bottom" Grid.Column="0" Grid.Row="1" >
+            <Button x:Name="btnMasCreditos" HorizontalAlignment="Stretch" Margin="0,0,0,0"  
+                    VerticalAlignment="Stretch" FontFamily="Showcard Gothic" FontSize="16" 
+                    VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="1" >
                 <StackPanel>
                     <Image Source="Imagenes/agregar.png" Width="38"/>
                     <TextBlock>Adicionales</TextBlock>
                 </StackPanel>
             </Button>
 
-            <Button x:Name="btnConfigurarCreditosMensuales" HorizontalAlignment="Stretch" Margin="0,0,0,0"  VerticalAlignment="Stretch" FontFamily="Showcard Gothic" FontSize="16" VerticalContentAlignment="Bottom" Grid.Column="0" Grid.Row="0" >
+            <Button x:Name="btnConfigurarCreditosMensuales" HorizontalAlignment="Stretch" 
+                    Margin="0,0,0,0"  VerticalAlignment="Stretch" FontFamily="Showcard Gothic" 
+                    FontSize="16" VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="0" >
                 <StackPanel>
                     <Image Source="Imagenes/Date.png" Width="38"/>
                     <TextBlock>Credito Mensual</TextBlock>
                 </StackPanel>
             </Button>
-            <Button x:Name="btnAcercaNosotros" HorizontalAlignment="Stretch" Margin="0,0,0,0"  VerticalAlignment="Stretch" FontFamily="Showcard Gothic" FontSize="16" VerticalContentAlignment="Bottom" Grid.Column="0" Grid.Row="1" >
+            <Button x:Name="btnAcercaNosotros" HorizontalAlignment="Stretch" Margin="0,0,0,0"  
+                    VerticalAlignment="Stretch" FontFamily="Showcard Gothic" FontSize="16" 
+                    VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="1" >
                 <StackPanel>
                     <Image Source="Imagenes/Info.png" Width="38"/>
                     <TextBlock>Acerca de</TextBlock>
                 </StackPanel>
             </Button>
 
-            <Button x:Name="btnRegresar" HorizontalAlignment="Stretch" Margin="0,0,0,0"  VerticalAlignment="Stretch" FontFamily="Showcard Gothic" FontSize="16" VerticalContentAlignment="Bottom" Grid.Column="0" Grid.Row="4" >
+            <Button x:Name="btnRegresar" HorizontalAlignment="Stretch" Margin="0,0,0,0"  
+                    VerticalAlignment="Stretch" FontFamily="Showcard Gothic" FontSize="16" 
+                    VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="4" >
                 <StackPanel>
                     <Image Source="Imagenes/Regresar.png" Width="38"/>
                     <TextBlock>Regresar</TextBlock>
                 </StackPanel>
             </Button>
         </Grid>
-        <Grid x:Name="grdContenido" HorizontalAlignment="Stretch"  Margin="10,10,10,10" VerticalAlignment="Stretch" Grid.Column="1">
+        <Grid x:Name="grdContenido" HorizontalAlignment="Stretch"  Margin="10,10,10,10" 
+              VerticalAlignment="Stretch" Grid.Column="1">
             <DockPanel Name="stkUSerControlContainer">
             </DockPanel>
         </Grid>

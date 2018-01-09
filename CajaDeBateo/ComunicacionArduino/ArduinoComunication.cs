@@ -63,7 +63,7 @@ namespace CajaDeBateo.ComunicacionArduino
                 }
                 catch (Exception e)
                 {
-                    message = "No se pudo establecer comunicacion con el arduino";
+                    message = "No se pudo establecer comunicacion con el arduino." + e.Message;
                     SensorNotFoundExceptio ex = new SensorNotFoundExceptio(message);
                     throw ex;
                 }

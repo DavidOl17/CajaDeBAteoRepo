@@ -16,13 +16,19 @@ using System.Windows.Shapes;
 namespace CajaDeBateo.ControlDeUsuarios
 {
     /// <summary>
-    /// Lógica de interacción para UserControl1.xaml
+    /// Interaction logic for CargarCreditosMensuales.xaml
     /// </summary>
-    public partial class UserControl1 : UserControl
+    public partial class CargarCreditosMensuales : UserControl
     {
-        public UserControl1()
+        public CargarCreditosMensuales()
         {
             InitializeComponent();
+        }
+
+        private void BtnCancelarCargarCreditosMensuales_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow Win = (MainWindow)Window.GetWindow(this);
+            Win.RegresarPantallaInicial();
         }
     }
 }

@@ -57,24 +57,38 @@
     </ApplicationDefinition>
     <Compile Include="ComunicacionArduino\ArduinoComunication.cs" />
     <Compile Include="ComunicacionArduino\SensorNotFoundExceptio.cs" />
-    <Compile Include="ControlDeUsuarios\EscribirDebug.xaml.cs">
-      <DependentUpon>EscribirDebug.xaml</DependentUpon>
+    <Compile Include="ControlDeUsuarios\CargarCreditosAdicionales.xaml.cs">
+      <DependentUpon>CargarCreditosAdicionales.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ControlDeUsuarios\Leer.xaml.cs">
-      <DependentUpon>Leer.xaml</DependentUpon>
+    <Compile Include="ControlDeUsuarios\CargarCreditosMensuales.xaml.cs">
+      <DependentUpon>CargarCreditosMensuales.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ControlDeUsuarios\CrearTarjeta.xaml.cs">
+      <DependentUpon>CrearTarjeta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ControlDeUsuarios\ActivarTarjeta.xaml.cs">
+      <DependentUpon>ActivarTarjeta.xaml</DependentUpon>
     </Compile>
     <Compile Include="SeleccionaArduino.xaml.cs">
       <DependentUpon>SeleccionaArduino.xaml</DependentUpon>
     </Compile>
-    <Page Include="ControlDeUsuarios\EscribirDebug.xaml">
+    <Page Include="ControlDeUsuarios\CargarCreditosAdicionales.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ControlDeUsuarios\Leer.xaml">
+    <Page Include="ControlDeUsuarios\CargarCreditosMensuales.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ControlDeUsuarios\UserControl1.xaml">
+    <Page Include="ControlDeUsuarios\CrearTarjeta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ControlDeUsuarios\ActivarTarjeta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ControlDeUsuarios\PantallaInicial.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -86,8 +100,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ControlDeUsuarios\UserControl1.xaml.cs">
-      <DependentUpon>UserControl1.xaml</DependentUpon>
+    <Compile Include="ControlDeUsuarios\PantallaInicial.xaml.cs">
+      <DependentUpon>PantallaInicial.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

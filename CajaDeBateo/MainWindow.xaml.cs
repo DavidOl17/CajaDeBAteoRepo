@@ -27,29 +27,37 @@ namespace CajaDeBateo
         ControladorMenu principalC, tarjetaC, creditosC, agregarCreditosC, configuracionC;
         ControladorMenus controlador;
 
+        private PantallaInicial uscPrincipal;
+        private Control controlDeVista;
+        int puertoSeleccionado;
+        string[] puertos;
+        ArduinoComunication ardC;
+
         private void Reset(object sender, KeyEventArgs e)
         {
             if(e.Key==Key.F1)
             {
                 ardC.Reset();
-                stkUSerControlContainer.Children.Remove(controlDeVista);
-                uscPrincipal = new UserControl1();
+                stkUSerControlContainer.Children.Clear();
+                uscPrincipal = new PantallaInicial();
                 controlDeVista = uscPrincipal;
                 stkUSerControlContainer.Children.Add(controlDeVista);
             }
-                
         }
 
-        private UserControl1 uscPrincipal;
-        private Control controlDeVista;
-        int puertoSeleccionado;
-        string[] puertos;
-        ArduinoComunication ardC;
+        public void RegresarPantallaInicial()
+        {
+            stkUSerControlContainer.Children.Clear();
+            uscPrincipal = new PantallaInicial();
+            controlDeVista = uscPrincipal;
+            stkUSerControlContainer.Children.Add(controlDeVista);
+        }
+
         public MainWindow()
         {
             InitializeComponent();
             InicializaBotones();
-            uscPrincipal = new UserControl1();
+            uscPrincipal = new PantallaInicial();
             controlDeVista = uscPrincipal;
             stkUSerControlContainer.Children.Add(controlDeVista);
             SeleccionaArduino sA = new SeleccionaArduino();
@@ -148,15 +156,24 @@ namespace CajaDeBateo
                     controlador.setAgregarCreditos();
                     break;
                 case "btnCrear":
-                    stkUSerControlContainer.Children.Remove(controlDeVista);
-                    EscribirDebug escribir= new EscribirDebug(ref ardC);
-                    controlDeVista = escribir;
+                    stkUSerControlContainer.Children.Clear();
+                    controlDeVista = new CrearTarjeta(ref ardC);
                     stkUSerControlContainer.Children.Add(controlDeVista);
                     break;
                 case "btnActivar":
-                    stkUSerControlContainer.Children.Remove(controlDeVista);
-                    Leer leer = new Leer(ref ardC);
-                    controlDeVista = leer;
+                    stkUSerControlContainer.Children.Clear();
+                    MainWindow Win = (MainWindow)Window.GetWindow(this);
+                    controlDeVista = new ActivarTarjeta(ref ardC, Win);
+                    stkUSerControlContainer.Children.Add(controlDeVista);
+                    break;
+                case "btnAgregarMensual":
+                    stkUSerControlContainer.Children.Clear();
+                    controlDeVista = new CargarCreditosMensuales();
+                    stkUSerControlContainer.Children.Add(controlDeVista);
+                    break;
+                case "btnMasCreditos":
+                    stkUSerControlContainer.Children.Clear();
+                    controlDeVista = new CargarCreditosAdicionales();
                     stkUSerControlContainer.Children.Add(controlDeVista);
                     break;
             }
