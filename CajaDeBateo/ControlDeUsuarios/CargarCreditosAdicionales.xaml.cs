@@ -56,5 +56,10 @@ namespace CajaDeBateo.ControlDeUsuarios
             bool EsNumero = int.TryParse(Cadena, out n);
             return (EsNumero && n > 0 && n <= 2147483647);
         }
+
+        private void BtnGuardarCargarCreditosAdicionales_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

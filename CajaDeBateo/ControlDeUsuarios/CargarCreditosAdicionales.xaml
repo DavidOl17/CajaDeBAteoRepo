@@ -15,9 +15,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Grid x:Name="ContCantidadCargarCreditosAdicionales" HorizontalAlignment="Stretch" 
-              VerticalAlignment="Stretch" 
-              Margin="0,0,0,0" Grid.Row="0">
+        <Grid x:Name="ContCantidadCargarCreditosAdicionales" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,0" Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
@@ -43,14 +41,14 @@
                        FontSize="16" Margin="15,0,0,0" 
                        VerticalAlignment="Bottom">ID Usuario:</TextBlock>
             <Label Grid.Row="5" x:Name="IDUusuarioCargarCreditosAdicionales" 
-                       HorizontalAlignment="Center" FontFamily="Showcard Gothic" 
-                       FontSize="14" Content="ID" VerticalAlignment="Center"/>
+                   HorizontalAlignment="Center" FontFamily="Showcard Gothic" FontSize="14" 
+                   Content="ID" VerticalAlignment="Center"/>
             <TextBlock Grid.Row="6" HorizontalAlignment="Left" FontFamily="Showcard Gothic" 
-                       FontSize="16" Margin="15,0,0,0"
+                       FontSize="16" Margin="15,0,0,0" 
                        VerticalAlignment="Bottom">Ingrese la cantidad a recargar:</TextBlock>
-            <TextBox Grid.Row="7" x:Name="CantidadCreditosAdicionales" HorizontalAlignment="Center" 
-                     FontFamily="Showcard Gothic" FontSize="14" Height="25" Width="200" 
-                     VerticalAlignment="Center" IsEnabled="True"
+            <TextBox Grid.Row="7" x:Name="CantidadCreditosAdicionales"  Height="23" 
+                     FontFamily="Showcard Gothic" FontSize="14" TextWrapping="Wrap" Width="250" 
+                     VerticalAlignment="Center" HorizontalAlignment="Center" 
                      TextChanged="CantidadCreditosAdicionales_TextChanged"/>
             <TextBlock Grid.Row="8"/>
         </Grid>
@@ -78,13 +76,12 @@
             </Button>
             <Button x:Name="BtnGuardarCargarCreditosAdicionales" HorizontalAlignment="Stretch" 
                     Margin="0,0,0,0" VerticalAlignment="Stretch" FontFamily="Showcard Gothic" 
-                    FontSize="16" Grid.Column="3" IsEnabled="False" >
+                    FontSize="16" Grid.Column="3" IsEnabled="False" Click="BtnGuardarCargarCreditosAdicionales_Click" >
                 <StackPanel>
                     <!--><Image Source="Imagenes/Tarjetas.png" Width="38"/>-->
                     <TextBlock>Guardar</TextBlock>
                 </StackPanel>
             </Button>
         </Grid>
-        <TextBlock Grid.Column="2"/>
     </Grid>
 </UserControl>

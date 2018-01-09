@@ -7,48 +7,77 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="85*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-
-        <!--LblDato muestra el id de la tarjeta que va a se activada-->
-        <TextBlock Grid.Row="0"/>
-        <TextBlock Grid.Row="1" FontFamily="Showcard Gothic" FontSize="16" 
-                   HorizontalAlignment="Center" 
-                   VerticalAlignment="Center">Activación de Tarjeta de Usuario</TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="10,19,0,0" VerticalAlignment="Top" 
-                   FontFamily="Showcard Gothic" FontSize="16" 
-                   Grid.Row="2">ID de usuario:</TextBlock>
-        <Label x:Name="lblDato" Content="ID Usuario" HorizontalAlignment="Center" Margin="0,0,0,0" 
-               VerticalAlignment="Center" FontFamily="Showcard Gothic" FontSize="14" Grid.Row="3"/>
-        <Grid Grid.Row="4">
+        <Grid x:Name="ContDatosActivarTarjeta" HorizontalAlignment="Stretch" 
+              VerticalAlignment="Stretch" Margin="0,0,0,0" Grid.Row="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="30*"/>
-                <ColumnDefinition Width="40*"/>
-                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Column="0"/>
-            <Button x:Name="BtnAceptarActivarTarjeta" HorizontalAlignment="Stretch"
-                    Margin="10,10,10,10" VerticalAlignment="Stretch" FontFamily="Showcard Gothic"
-                    FontSize="16" Grid.Column="1" Click="BtnAceptarActivarTarjeta_Click">
+
+            <TextBlock Grid.Row="0"/>
+            <TextBlock Grid.Row="1" HorizontalAlignment="Center" FontFamily="Showcard Gothic" 
+                       FontSize="20">Activación de Tarjeta</TextBlock>
+            <TextBlock Grid.Row="2" HorizontalAlignment="Center" FontFamily="Showcard Gothic" 
+                       FontSize="20">De Usuario</TextBlock>
+            <TextBlock Grid.Row="3"/>
+            <TextBlock Grid.Row="4" HorizontalAlignment="Left" FontFamily="Showcard Gothic" 
+                       FontSize="16" Margin="15,0,0,0"
+                       VerticalAlignment="Bottom">ID Usuario:</TextBlock>
+            <Label Grid.Row="5" x:Name="lblDato" HorizontalAlignment="Center" 
+                   FontFamily="Showcard Gothic" FontSize="14" Content="ID" 
+                   VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="6" HorizontalAlignment="Center" FontFamily="Showcard Gothic" 
+                       FontSize="16" VerticalAlignment="Center">¿Activar Tarjeta?</TextBlock>
+            <TextBlock Grid.Row="7"/>
+        </Grid>
+        <Grid x:Name="ContBotonesActivarTarjeta" HorizontalAlignment="Stretch"
+              VerticalAlignment="Stretch" 
+              Margin="0,0,0,0" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="15*"/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="15*"/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="15*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="BtnCancelarActivarTarjeta" HorizontalAlignment="Stretch" 
+                    Margin="0,0,0,0" VerticalAlignment="Stretch" FontFamily="Showcard Gothic" 
+                    FontSize="16" Grid.Column="1" Click="BtnCancelarActivarTarjeta_Click">
                 <StackPanel>
                     <!--><Image Source="Imagenes/Tarjetas.png" Width="38"/>-->
-                    <TextBlock>Aceptar</TextBlock>
+                    <TextBlock>Cancelar</TextBlock>
                 </StackPanel>
             </Button>
-            <TextBlock Grid.Column="2"/>
+            <Button x:Name="BtnActivarActivarTarjeta" HorizontalAlignment="Stretch" 
+                    Margin="0,0,0,0" VerticalAlignment="Stretch" FontFamily="Showcard Gothic" 
+                    FontSize="16" Grid.Column="3">
+                <StackPanel>
+                    <!--><Image Source="Imagenes/Tarjetas.png" Width="38"/>-->
+                    <TextBlock>Activar</TextBlock>
+                </StackPanel>
+            </Button>
         </Grid>
-        <TextBlock Grid.Row="5"/>
+        <TextBlock Grid.Column="2"/>
     </Grid>
 </UserControl>

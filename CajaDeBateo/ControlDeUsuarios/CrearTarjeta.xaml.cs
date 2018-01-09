@@ -26,7 +26,7 @@ namespace CajaDeBateo.ControlDeUsuarios
         ArduinoComunication arduino;
         bool escribirID = false;
         bool leer = false;
-        public CrearTarjeta(ref ArduinoComunication arduino)
+        public CrearTarjeta(ref ArduinoComunication arduino, MainWindow Win)
         {
             InitializeComponent();
             escribirID = false;
@@ -37,17 +37,15 @@ namespace CajaDeBateo.ControlDeUsuarios
             {
                 arduino.RespuestaRecivida += new EventHandler(Read);
                 id = random.Next(0, 50000);
-                lblID.Content = "ID" + id.ToString();
+                lblDato.Content = id.ToString();
                 arduino.Write("1");
             }
             catch (NullReferenceException e)
             {
                 String Mensaje = "Conexión a Lector/Escritor no detectada. " + e.Message;
                 MessageBox.Show(Mensaje, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                Win.RegresarPantallaInicial();
             }
-
-            /*MainWindow Win = (MainWindow)Window.GetWindow(this);
-            Win.RegresarPantallaInicial();*/
         }
 
         private void Read(object sender, EventArgs e)
@@ -68,6 +66,12 @@ namespace CajaDeBateo.ControlDeUsuarios
             {
                 lblDato.Dispatcher.Invoke(new Action(() => { lblDato.Content = "Bienvenido"; }));
             }
+        }
+
+        private void BtnCancelarCrearTarjeta_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow Win = (MainWindow)Window.GetWindow(this);
+            Win.RegresarPantallaInicial();
         }
     }
 }

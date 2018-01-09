@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="CajaDeBateo.ControlDeUsuarios.CrearTarjeta"
+﻿<UserControl x:Class="CajaDeBateo.ControlDeUsuarios.DesactivarTarjeta"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -15,7 +15,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Grid x:Name="ContDatosCrearTarjeta" HorizontalAlignment="Stretch" 
+        <Grid x:Name="ContDatosDesactivarTarjeta" HorizontalAlignment="Stretch" 
               VerticalAlignment="Stretch" Margin="0,0,0,0" Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -33,7 +33,7 @@
 
             <TextBlock Grid.Row="0"/>
             <TextBlock Grid.Row="1" HorizontalAlignment="Center" FontFamily="Showcard Gothic" 
-                       FontSize="20">Creación de Tarjeta</TextBlock>
+                       FontSize="20">Desactivación de Tarjeta</TextBlock>
             <TextBlock Grid.Row="2" HorizontalAlignment="Center" FontFamily="Showcard Gothic" 
                        FontSize="20">De Usuario</TextBlock>
             <TextBlock Grid.Row="3"/>
@@ -44,10 +44,10 @@
                    FontFamily="Showcard Gothic" FontSize="14" Content="ID" 
                    VerticalAlignment="Center"/>
             <TextBlock Grid.Row="6" HorizontalAlignment="Center" FontFamily="Showcard Gothic" 
-                       FontSize="16" VerticalAlignment="Center">¿Crear Tarjeta?</TextBlock>
+                       FontSize="16" VerticalAlignment="Center">¿Desactivar Tarjeta?</TextBlock>
             <TextBlock Grid.Row="7"/>
         </Grid>
-        <Grid x:Name="ContBotonesCrearTarjeta" HorizontalAlignment="Stretch"
+        <Grid x:Name="ContBotonesDesactivarTarjeta" HorizontalAlignment="Stretch"
               VerticalAlignment="Stretch" 
               Margin="0,0,0,0" Grid.Row="1">
             <Grid.RowDefinitions>
@@ -61,20 +61,20 @@
                 <ColumnDefinition Width="15*"/>
             </Grid.ColumnDefinitions>
 
-            <Button x:Name="BtnCancelarCrearTarjeta" HorizontalAlignment="Stretch" 
+            <Button x:Name="BtnCancelarDesactivarTarjeta" HorizontalAlignment="Stretch" 
                     Margin="0,0,0,0" VerticalAlignment="Stretch" FontFamily="Showcard Gothic" 
-                    FontSize="16" Grid.Column="1" Click="BtnCancelarCrearTarjeta_Click">
+                    FontSize="16" Grid.Column="1" Click="BtnCancelarDesactivarTarjeta_Click">
                 <StackPanel>
                     <!--><Image Source="Imagenes/Tarjetas.png" Width="38"/>-->
                     <TextBlock>Cancelar</TextBlock>
                 </StackPanel>
             </Button>
-            <Button x:Name="BtnActivarCrearTarjeta" HorizontalAlignment="Stretch" 
+            <Button x:Name="BtnDesactivarActivarTarjeta" HorizontalAlignment="Stretch" 
                     Margin="0,0,0,0" VerticalAlignment="Stretch" FontFamily="Showcard Gothic" 
                     FontSize="16" Grid.Column="3">
                 <StackPanel>
                     <!--><Image Source="Imagenes/Tarjetas.png" Width="38"/>-->
-                    <TextBlock>Crear</TextBlock>
+                    <TextBlock>Desactivar</TextBlock>
                 </StackPanel>
             </Button>
         </Grid>

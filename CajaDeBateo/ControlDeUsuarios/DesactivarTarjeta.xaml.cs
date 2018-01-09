@@ -6,14 +6,14 @@ using System.Windows.Controls;
 namespace CajaDeBateo.ControlDeUsuarios
 {
     /// <summary>
-    /// Lógica de interacción para Leer.xaml
+    /// Interaction logic for DesactivarTarjeta.xaml
     /// </summary>
-    public partial class ActivarTarjeta : UserControl
+    public partial class DesactivarTarjeta : UserControl
     {
         ArduinoComunication arduino;
         //string info;
         Label aux;
-        public ActivarTarjeta(ref ArduinoComunication arduino, MainWindow Win)
+        public DesactivarTarjeta(ref ArduinoComunication arduino, MainWindow Win)
         {
             InitializeComponent();
             this.arduino = arduino;
@@ -39,7 +39,7 @@ namespace CajaDeBateo.ControlDeUsuarios
             lblDato.Dispatcher.Invoke(new Action(() => { lblDato.Content = data; }));
         }
 
-        private void BtnCancelarActivarTarjeta_Click(object sender, RoutedEventArgs e)
+        private void BtnCancelarDesactivarTarjeta_Click(object sender, RoutedEventArgs e)
         {
             MainWindow Win = (MainWindow)Window.GetWindow(this);
             Win.RegresarPantallaInicial();

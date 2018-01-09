@@ -27,29 +27,27 @@ namespace CajaDeBateo
         ControladorMenu principalC, tarjetaC, creditosC, agregarCreditosC, configuracionC;
         ControladorMenus controlador;
 
-        private PantallaInicial uscPrincipal;
         private Control controlDeVista;
         int puertoSeleccionado;
         string[] puertos;
         ArduinoComunication ardC;
+        MainWindow Win = null;
 
         private void Reset(object sender, KeyEventArgs e)
         {
             if(e.Key==Key.F1)
             {
                 ardC.Reset();
-                stkUSerControlContainer.Children.Clear();
-                uscPrincipal = new PantallaInicial();
-                controlDeVista = uscPrincipal;
+                stkUSerControlContainer.Children.Remove(controlDeVista);
+                controlDeVista = new PantallaInicial();
                 stkUSerControlContainer.Children.Add(controlDeVista);
             }
         }
 
         public void RegresarPantallaInicial()
         {
-            stkUSerControlContainer.Children.Clear();
-            uscPrincipal = new PantallaInicial();
-            controlDeVista = uscPrincipal;
+            stkUSerControlContainer.Children.Remove(controlDeVista);
+            controlDeVista = new PantallaInicial();
             stkUSerControlContainer.Children.Add(controlDeVista);
         }
 
@@ -57,8 +55,7 @@ namespace CajaDeBateo
         {
             InitializeComponent();
             InicializaBotones();
-            uscPrincipal = new PantallaInicial();
-            controlDeVista = uscPrincipal;
+            controlDeVista = new PantallaInicial();
             stkUSerControlContainer.Children.Add(controlDeVista);
             SeleccionaArduino sA = new SeleccionaArduino();
             sA.ShowDialog();
@@ -150,33 +147,42 @@ namespace CajaDeBateo
                     controlador.setConfiguracion();
                     break;
                 case "btnRegresar":
+                    RegresarPantallaInicial();
                     controlador.setBack();
                     break;
                 case "btnAgregarCreditos":
                     controlador.setAgregarCreditos();
                     break;
                 case "btnCrear":
-                    stkUSerControlContainer.Children.Clear();
-                    controlDeVista = new CrearTarjeta(ref ardC);
+                    stkUSerControlContainer.Children.Remove(controlDeVista);
+                    Win = (MainWindow)Window.GetWindow(this);
+                    controlDeVista = new CrearTarjeta(ref ardC, Win);
                     stkUSerControlContainer.Children.Add(controlDeVista);
                     break;
                 case "btnActivar":
-                    stkUSerControlContainer.Children.Clear();
-                    MainWindow Win = (MainWindow)Window.GetWindow(this);
+                    stkUSerControlContainer.Children.Remove(controlDeVista);
+                    Win = (MainWindow)Window.GetWindow(this);
                     controlDeVista = new ActivarTarjeta(ref ardC, Win);
                     stkUSerControlContainer.Children.Add(controlDeVista);
                     break;
+                case "btnDesactivar":
+                    stkUSerControlContainer.Children.Remove(controlDeVista);
+                    Win = (MainWindow)Window.GetWindow(this);
+                    controlDeVista = new DesactivarTarjeta(ref ardC, Win);
+                    stkUSerControlContainer.Children.Add(controlDeVista);
+                    break;
                 case "btnAgregarMensual":
-                    stkUSerControlContainer.Children.Clear();
+                    stkUSerControlContainer.Children.Remove(controlDeVista);
                     controlDeVista = new CargarCreditosMensuales();
                     stkUSerControlContainer.Children.Add(controlDeVista);
                     break;
                 case "btnMasCreditos":
-                    stkUSerControlContainer.Children.Clear();
+                    stkUSerControlContainer.Children.Remove(controlDeVista);
                     controlDeVista = new CargarCreditosAdicionales();
                     stkUSerControlContainer.Children.Add(controlDeVista);
                     break;
             }
+            Win = null;
         }
     }
 }

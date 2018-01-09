@@ -69,6 +69,9 @@
     <Compile Include="ControlDeUsuarios\ActivarTarjeta.xaml.cs">
       <DependentUpon>ActivarTarjeta.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ControlDeUsuarios\DesactivarTarjeta.xaml.cs">
+      <DependentUpon>DesactivarTarjeta.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SeleccionaArduino.xaml.cs">
       <DependentUpon>SeleccionaArduino.xaml</DependentUpon>
     </Compile>
@@ -85,6 +88,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ControlDeUsuarios\ActivarTarjeta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ControlDeUsuarios\DesactivarTarjeta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
